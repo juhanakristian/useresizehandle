@@ -1,7 +1,6 @@
 import * as React from "react";
 
-
-function useSupersize() {
+export function useSupersize() {
   const containerRef = React.useRef<HTMLElement | null>(null);
 
   const [width, setWidth] = React.useState<number | undefined>();
@@ -37,22 +36,17 @@ function useSupersize() {
     setY(event.pageY);
   }, []);
 
-  const handleStyle = React.useMemo(() => {
-    if (!containerRef) {
-      return;
-    }
-    return {
-      position: "absolute",
-      bottom: 0,
-      right: 0
-    };
-  }, [containerRef]);
+  const handleStyle = {
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+  };
 
   const handleProps = {
     draggable: true,
     onDragStart: dragStart,
     onDrag: drag,
-    style: handleStyle
+    style: handleStyle,
   };
 
   const containerProps = {
@@ -61,8 +55,7 @@ function useSupersize() {
       overflow: "hidden",
       width,
       height,
-      backgroundColor: "deeppink"
-    }
+    },
   };
 
   return { handleProps, containerProps, containerRef };

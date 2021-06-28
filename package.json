@@ -1,10 +1,11 @@
 {
-  "name": "supersizeme",
+  "name": "supersize",
   "version": "0.1.0",
   "description": "React library for adding resizing to components",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
