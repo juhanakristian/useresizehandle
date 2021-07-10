@@ -50,6 +50,7 @@ export function useSupersize() {
   };
 
   const containerProps = {
+    ref: containerRef,
     style: {
       position: "relative",
       overflow: "hidden",
