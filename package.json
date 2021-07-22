@@ -1,15 +1,18 @@
 {
-  "name": "supersize",
+  "name": "useresize",
   "version": "0.1.0",
   "description": "React library for adding resizing to components",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "test": "test",
     "build": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/juhanakristian/supersizeme.git"
+    "url": "git+https://github.com/juhanakristian/useresize.git"
   },
   "keywords": [
     "react",
@@ -18,15 +21,15 @@
   "author": "Juhana Jauhiainen <juhana.jauhiainen@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/juhanakristian/supersizeme/issues"
+    "url": "https://github.com/juhanakristian/useresize/issues"
   },
-  "homepage": "https://github.com/juhanakristian/supersizeme#readme",
+  "homepage": "https://github.com/juhanakristian/useresize#readme",
   "devDependencies": {
     "@types/react": "^17.0.11",
     "prettier": "^2.3.2",
     "typescript": "^4.3.4"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }

@@ -1,4 +1,4 @@
-# 📐 Supersize
+# 📐 useResize
 
 *A react hook for making elements user resizable*
 
@@ -6,10 +6,10 @@
 ## Usage
 
 ```js
-import { useSupersize } from "supersizeme";
+import { useResize } from "useresize";
 
 function Component() {
-    const {handleProps, containerProps } = useSupersize();
+    const {handleProps, containerProps } = useResize();
 
     return (
       <div>
@@ -33,20 +33,19 @@ function Component() {
 
 ## Configuration
 
-The `useSupersize` hook accepts an optional configuration object that can be used to alter the behaviour.
+The `useResize` hook accepts an optional configuration object that can be used to alter the behaviour.
 
 ```ts
-interface UseSupersizeConfiguration {
+interface UseResizeConfig {
     axis: "horizontal" | "vertical" | "both";
-    heightProperty: "height" | "maxHeight" | "minHeight";
-    overflowX: "hidden" | "auto" | "scroll";
-    overflowY: "hidden" | "auto" | "scroll";
 }
 ```
 
 ```js
 const config = {
     axis: "horizontal",
-    overflowX: "hidden",
 }
+
+const {handleProps, containerProps} = useResize(config)
+
 ```
