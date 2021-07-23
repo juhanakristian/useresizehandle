@@ -2,6 +2,13 @@
 
 *A react hook for making elements user resizable*
 
+## Install
+
+```shell
+npm install useresizehandle
+# or with yarn
+yarn add useresizehandle
+```
 
 ## Usage
 
