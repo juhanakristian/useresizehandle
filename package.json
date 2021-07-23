@@ -1,7 +1,7 @@
 {
   "name": "useresize",
   "version": "0.1.0",
-  "description": "React library for adding resizing to components",
+  "description": "React hook for adding resizing to components",
   "main": "dist/index.js",
   "files": [
     "dist/"
