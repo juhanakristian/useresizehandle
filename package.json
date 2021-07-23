@@ -1,5 +1,5 @@
 {
-  "name": "useresize",
+  "name": "useresizehandle",
   "version": "0.1.0",
   "description": "React hook for adding resizing to components",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/juhanakristian/useresize.git"
+    "url": "git+https://github.com/juhanakristian/useresizehandle.git"
   },
   "keywords": [
     "react",
@@ -21,9 +21,9 @@
   "author": "Juhana Jauhiainen <juhana.jauhiainen@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/juhanakristian/useresize/issues"
+    "url": "https://github.com/juhanakristian/useresizehandle/issues"
   },
-  "homepage": "https://github.com/juhanakristian/useresize#readme",
+  "homepage": "https://github.com/juhanakristian/useresizehandle#readme",
   "devDependencies": {
     "@types/react": "^17.0.11",
     "prettier": "^2.3.2",

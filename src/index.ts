@@ -1,10 +1,10 @@
 import * as React from "react";
 
-interface UseResizeConfig {
+interface UseResizeHandleConfig {
   axis?: "horizontal" | "vertical" | "both";
 }
 
-export function useResize(config?: UseResizeConfig) {
+export function useResizeHandle(config?: UseResizeHandleConfig) {
   const containerRef = React.useRef<HTMLElement | null>(null);
 
   const [width, setWidth] = React.useState<number | undefined>();

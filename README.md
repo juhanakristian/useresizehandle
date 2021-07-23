@@ -1,4 +1,4 @@
-# 📐 useResize
+# 📐 useResizeHandleHandle
 
 *A react hook for making elements user resizable*
 
@@ -6,10 +6,10 @@
 ## Usage
 
 ```js
-import { useResize } from "useresize";
+import { useResizeHandle } from "useresize";
 
 function Component() {
-    const {handleProps, containerProps } = useResize();
+    const {handleProps, containerProps } = useResizeHandle();
 
     return (
       <div>
@@ -33,7 +33,7 @@ function Component() {
 
 ## Configuration
 
-The `useResize` hook accepts an optional configuration object that can be used to alter the behaviour.
+The `useResizeHandle` hook accepts an optional configuration object that can be used to alter the behaviour.
 
 ```ts
 interface UseResizeConfig {
@@ -46,6 +46,6 @@ const config = {
     axis: "horizontal",
 }
 
-const {handleProps, containerProps} = useResize(config)
+const {handleProps, containerProps} = useResizeHandle(config)
 
 ```

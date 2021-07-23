@@ -2,10 +2,10 @@ import * as React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-import { useResize } from "useresize";
+import { useResizeHandle } from "useresize";
 
 function App() {
-  const { containerProps, handleProps } = useResize({ axis: "both" });
+  const { containerProps, handleProps } = useResizeHandle({ axis: "both" });
 
   return (
     <div className="App">
