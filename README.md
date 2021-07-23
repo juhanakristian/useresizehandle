@@ -1,4 +1,4 @@
-# 📐 useResizeHandleHandle
+# 📐 useResizeHandle
 
 *A react hook for making elements user resizable*
 
