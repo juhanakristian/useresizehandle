@@ -2,7 +2,7 @@ import * as React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-import { useResizeHandle } from "useresize";
+import { useResizeHandle } from "useresizehandle";
 
 function App() {
   const { containerProps, handleProps } = useResizeHandle({ axis: "both" });
