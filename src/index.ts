@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { useThrottle } from "./util";
+
 interface UseResizeHandleConfig {
   axis?: "horizontal" | "vertical" | "both";
 }
@@ -9,8 +11,9 @@ export function useResizeHandle(config?: UseResizeHandleConfig) {
 
   const [width, setWidth] = React.useState<number | undefined>();
   const [height, setHeight] = React.useState<number | undefined>();
-  const [x, setX] = React.useState<number>();
-  const [y, setY] = React.useState<number>();
+
+  const [x, setX] = React.useState<number | undefined>();
+  const [y, setY] = React.useState<number | undefined>();
 
   const axis = config?.axis ?? "both";
 
@@ -23,16 +26,18 @@ export function useResizeHandle(config?: UseResizeHandleConfig) {
 
   const drag = React.useCallback(
     (event: DragEvent) => {
-      if (event.pageX === 0) return;
+      if (event.screenX === 0) return;
       if (!x || !y || !width || !height) return;
 
-      const offsetX = x - event.pageX;
-      const offsetY = y - event.pageY;
+      const offsetX = x - event.screenX;
+      const offsetY = y - event.screenY;
 
-      if (axis == "horizontal" || axis === "both") setWidth(width - offsetX);
+      if (axis == "horizontal" || axis === "both") {
+        setWidth(width - offsetX);
+      }
       if (axis == "vertical" || axis === "both") setHeight(height - offsetY);
-      setX(event.pageX);
-      setY(event.pageY);
+      setX(event.screenX);
+      setY(event.screenY);
     },
     [x, y, width, height, axis]
   );
@@ -44,8 +49,13 @@ export function useResizeHandle(config?: UseResizeHandleConfig) {
         "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=";
       event.dataTransfer.setDragImage(img, 0, 0);
     }
-    setX(event.pageX);
-    setY(event.pageY);
+    setX(event.screenX);
+    setY(event.screenY);
+  }, []);
+
+  const dragEnd = React.useCallback((event: DragEvent) => {
+    setX(undefined);
+    setY(undefined);
   }, []);
 
   const handleStyle = {
@@ -59,6 +69,7 @@ export function useResizeHandle(config?: UseResizeHandleConfig) {
     draggable: true,
     onDragStart: dragStart,
     onDrag: drag,
+    onDragEnd: dragEnd,
     style: handleStyle,
   };
 
