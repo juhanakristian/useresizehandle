@@ -1,7 +1,5 @@
 import * as React from "react";
 
-import { useThrottle } from "./util";
-
 interface UseResizeHandleConfig {
   axis?: "horizontal" | "vertical" | "both";
   onResizeStart?: () => void;
